@@ -10,14 +10,17 @@ function convertToRoman(num) {
     };
 
   //your code here
-	 let result = '';
+let result = '';
 
-  // Loop through the object keys
-  for (const key in obj) {
-    // Keep appending the symbol while the number is greater than its value
-    while (num >= obj[key]) {
-      result += key;
-      num -= obj[key];
+  // Array ke upar loop chalayein
+  for (let i = 0; i < Object.keys(obj).length; i++) {
+    const symbol = obj[i][0];
+    const value = obj[i][1];
+
+    
+    while (num >= value) {
+      result += symbol;
+      num -= value;
     }
   }
 
